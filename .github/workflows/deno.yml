@@ -1,42 +1,21 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+# 1. Navigate to your project directory
+cd path/to/your/visitorpro
+# (Replace 'path/to/your/visitorpro' with your actual project path)
 
-# This workflow will install Deno then run `deno lint` and `deno test`.
-# For more information see: https://github.com/denoland/setup-deno
+# 2. Initialize a new Git repository
+git init
 
-name: Deno
+# 3. Stage your files
+git add .
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+# 4. Commit your files
+git commit -m "Initial commit: VisitorPro frontend (HTML, CSS, JS)"
 
-permissions:
-  contents: read
+# 5. Connect your local repository to GitHub
+# Copy the exact command from GitHub's "…or push an existing repository from the command line" section.
+# It will look something like this (replace placeholders):
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Setup repo
-        uses: actions/checkout@v4
-
-      - name: Setup Deno
-        # uses: denoland/setup-deno@v1
-        uses: denoland/setup-deno@61fe2df320078202e33d7d5ad347e7dcfa0e8f31  # v1.1.2
-        with:
-          deno-version: v1.x
-
-      # Uncomment this step to verify the use of 'deno fmt' on each commit.
-      # - name: Verify formatting
-      #   run: deno fmt --check
-
-      - name: Run linter
-        run: deno lint
-
-      - name: Run tests
-        run: deno test -A
+# 6. Push your code to GitHub
+git push -u origin main
+# (Use 'main' or 'master' depending on your default branch)
