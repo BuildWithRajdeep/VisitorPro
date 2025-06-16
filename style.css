@@ -1,0 +1,40 @@
+/* Import Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+/* Basic body styles for font and smooth transitions */
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Card hover effect for a subtle lift and shadow */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Enhanced shadow */
+}
+
+/* Sidebar transition for smooth opening/closing on smaller screens */
+.sidebar {
+    transition: transform 0.3s ease;
+}
+
+/* Media query for collapsing the sidebar on mobile */
+@media (max-width: 768px) {
+    .sidebar.collapsed {
+        transform: translateX(-100%); /* Hides the sidebar by moving it off-screen */
+    }
+}
+
+/* Styling for the custom dark mode toggle switch */
+.toggle-checkbox:checked {
+    right: 0; /* Moves the thumb to the right when checked */
+    border-color: #68D391; /* Green border when checked */
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #68D391; /* Green background when checked */
+}
